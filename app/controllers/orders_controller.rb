@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-
+before_filter :authorize
   def show
     @order = Order.find(params[:id])
     @line_item = LineItem.joins(:order, :product)
