@@ -1,0 +1,16 @@
+<h1>Add Category</h1><br>
+
+<% if @category.errors.any? %>
+  <div class="alert alert-danger">
+    <p><%= @category.errors.full_messages[0] %></p> 
+  </div>
+<% end %>
+
+<%= form_for :category, url: admin_categories_path do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+  </p>  
+<% end %>
+
